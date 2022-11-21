@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sy_memo/static/css/main.7b246adf.css",
+    "main.js": "/sy_memo/static/js/main.782f67d8.js",
+    "index.html": "/sy_memo/index.html",
+    "main.7b246adf.css.map": "/sy_memo/static/css/main.7b246adf.css.map",
+    "main.782f67d8.js.map": "/sy_memo/static/js/main.782f67d8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b246adf.css",
+    "static/js/main.782f67d8.js"
+  ]
+}
