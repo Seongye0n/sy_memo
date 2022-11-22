@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {MobileSize} from '../style/screen.js';
 
 const StyleHeader = styled.header`
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 15vh;
     background-color:#8D93AB;
@@ -36,7 +36,7 @@ const Header = () => {
     return(
         <StyleHeader>
             <div style={logo}>
-                <img src='/images/logo.png' alt='logo' style={logoImg}/>
+                <img src={process.env.PUBLIC_URL+'/images/logo.png'} alt='logo' style={logoImg}/>
                 <h1 style={logoH1}>MEMO</h1>
             </div> 
         </StyleHeader>

@@ -14,3 +14,7 @@ body{
     color:#393B44;
     font-size: 62.5%;
 }
+.Content{
+    position: relative;
+    width: 100%;
+}
