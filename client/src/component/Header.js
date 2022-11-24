@@ -36,7 +36,7 @@ const Header = () => {
     return(
         <StyleHeader>
             <div style={logo}>
-                <img src={process.env.PUBLIC_URL+'/images/logo.png'} alt='logo' style={logoImg}/>
+                <img src={process.env.PUBLIC_URL+'/memo/client/images/logo.png'} alt='logo' style={logoImg}/>
                 <h1 style={logoH1}>MEMO</h1>
             </div> 
         </StyleHeader>
