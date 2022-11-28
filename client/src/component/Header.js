@@ -13,6 +13,20 @@ const Header = () => {
     
     const mobile = MobileSize();
 
+    // axios({
+    //     method:'post',
+    //     url : 'https://tjddus0630.cafe24.com/ajax/ajax_join_update.php',
+    //     data : {
+    //         email:'email',
+    //         id:'id',
+    //         pw:'pw',
+    //         phone:'phone',
+    //     }
+    // })
+    // .then((data)=>{
+
+    // })
+
     const logo = {
         position:'absolute',
         width: mobile? '100%' : '30vw',
@@ -36,7 +50,7 @@ const Header = () => {
     return(
         <StyleHeader>
             <div style={logo}>
-                <img src={process.env.PUBLIC_URL+'/memo/client/images/logo.png'} alt='logo' style={logoImg}/>
+                <img src={process.env.PUBLIC_URL+'/images/logo.png'} alt='logo' style={logoImg}/>
                 <h1 style={logoH1}>MEMO</h1>
             </div> 
         </StyleHeader>
