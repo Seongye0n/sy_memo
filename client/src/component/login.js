@@ -58,21 +58,21 @@ const Join = (props) => {
         setFormCheck({...formCheck, name:nameRegEx.test(name), email:emailRegEx.test(email), pw:pwRegEx.test(pw), pwCheck:pw===pwCheck}); 
        
         if(formCheck.name && formCheck.email && formCheck.pw && formCheck.pwCheck){
-            axios({
-                //method:'post', //method: 데이터 통신하는 방식
-                //url:'/sy_memo/ajax/ajax_join_update.php',
-                //data:QueryString.stringify({name:name, email:email, pw:pw}),
-            })
-            .then(res=>res.data) //res:서버에서 받아온 데이터, res.data: 데이터
-            .then(data=>{
-                if(data.result){
-                    setAlertValue('회원가입이 완료되었습니다.');
-                    //sessionStorage.setItem('id', id);
-                }
-                else{
-                    setAlertValue(data.msg);
-                }
-            }) //회원가입 성공
+            // axios({
+            //     method:'post', //method: 데이터 통신하는 방식
+            //     url:'/sy_memo/ajax/ajax_join_update.php',
+            //     data:QueryString.stringify({name:name, email:email, pw:pw}),
+            // })
+            // .then(res=>res.data) //res:서버에서 받아온 데이터, res.data: 데이터
+            // .then(data=>{
+            //     if(data.result){
+            //         setAlertValue('회원가입이 완료되었습니다.');
+            //         //sessionStorage.setItem('id', id);
+            //     }
+            //     else{
+            //         setAlertValue(data.msg);
+            //     }
+            // }) //회원가입 성공
         }else if(!formCheck.name){
             setAlertModal(true);
             setAlertValue('사용할 수 없는 이름입니다.');
