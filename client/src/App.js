@@ -1,6 +1,6 @@
 import './App.css';
-import Header from '../src/component/Header';
-import {Login, Join} from '../src/hooks/member';
+import Header from './component/header';
+import Login from './component/login';
 
 function App() {
   
@@ -8,8 +8,7 @@ function App() {
     <div className='App'>
       <Header/>
       <div className='Content'>
-        {/* <Login/> */}
-          {/* <Join/> */}
+        <Login/>
       </div>
     </div>
   );

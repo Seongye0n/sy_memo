@@ -31,7 +31,7 @@ button{
 
 //로그인창
 .loginWindow{
-    position:fixed;
+    position:relative;
     left:50%;
     top:50%;
     transform: translate(-50%, -50%);
@@ -41,10 +41,6 @@ button{
     border:2px solid #393B44;
     border-radius: 10px;
     padding:2%;
-}
-
-#LoginForm{
-    
 }
 #LoginForm>input{
     display: block;
@@ -61,11 +57,65 @@ button{
     width:100%;
     margin-top:5px;
 }
-//join 
+.loginBtn{
+    display: inline-block;
+    margin-top:10px;
+    width:48%;
+}
+//join
+.joinWindow{
+    position:relative;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    width:90%;
+    height:95%;
+    background-color: #D6E0F0;
+    border:2px solid #393B44;
+    border-radius: 10px;
+    padding:5%;
+}
 #LoginForm>p{
     margin-top:0;
     padding-left:5px;
 }
-#LoginForm>.joinBtn{
-    margin-top:15px;
+.joinBtn{
+    display: inline-block;
+    margin-top:10px;
+    width:48%;
+}
+
+//알림창
+.alert{
+    position:relative;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    width:90%;
+    height:60%;
+    background-color: #D6E0F0;
+    border:2px solid #393B44;
+    border-radius: 10px;
+    padding:5%;
+}
+.alert>.logoImg{
+    position:relative;
+    width:15%;
+    left:50%;
+    transform: translateX(-50%);
+    margin-bottom:10px;
+}
+.alert>p{
+    position:relative;
+    left:50%;
+    transform: translateX(-30%);
+    font-size:0.8rem;
+    color:#393B44;
+    font-weight:bolder;
+}
+.alert>button{
+    position:relative;
+    left:50%;
+    transform: translateX(-50%);
+    margin-top:10px;
 }
