@@ -58,21 +58,20 @@ const Join = (props) => {
         setFormCheck({...formCheck, name:nameRegEx.test(name), email:emailRegEx.test(email), pw:pwRegEx.test(pw), pwCheck:pw===pwCheck}); 
        
         if(formCheck.name && formCheck.email && formCheck.pw && formCheck.pwCheck){
-            // axios({
-            //     method:'post', //method: 데이터 통신하는 방식
-            //     url:'/sy_memo/ajax/ajax_join_update.php',
-            //     data:QueryString.stringify({name:name, email:email, pw:pw}),
-            // })
-            // .then(res=>res.data) //res:서버에서 받아온 데이터, res.data: 데이터
-            // .then(data=>{
-            //     if(data.result){
-            //         setAlertValue('회원가입이 완료되었습니다.');
-            //         //sessionStorage.setItem('id', id);
-            //     }
-            //     else{
-            //         setAlertValue(data.msg);
-            //     }
-            // }) //회원가입 성공
+            axios.post('https://tjddus0630.cafe24.com/sy_memo/ajax/ajax_join_update.php',{       // POST
+                name: name,
+                email: email,
+                pw: pw,
+            })
+            .then(res => res.data)
+            .then(data => {
+                if(data.result){
+                    setAlertModal('회원가입이 완료되었습니다.');
+                }
+                else{
+                    setAlertModal('회원가입을 할 수 없습니다.');
+                }
+            }) //회원가입 성공여부
         }else if(!formCheck.name){
             setAlertModal(true);
             setAlertValue('사용할 수 없는 이름입니다.');
@@ -96,9 +95,9 @@ const Join = (props) => {
                 <form method='post' id='LoginForm' >
                     <input type='text' name='name' placeholder='이름' value={name} onChange={(e)=>{setName(e.target.value)}}/>
                     <input type='text' name='email' placeholder='ID (Email)' value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
-                    <input type='text' name='pw' placeholder='비밀번호' value={pw} onChange={(e)=>{setPw(e.target.value)}}/>
+                    <input type='password' name='pw' placeholder='비밀번호' value={pw} onChange={(e)=>{setPw(e.target.value)}}/>
                     <p> * 비밀번호는 영문 대소문자, 숫자를 혼합하여 8~20자로 입력해주세요.</p>
-                    <input type='text' name='pwcheck' placeholder='비밀번호 확인' onChange={(e)=>{setPwCheck(e.target.value)}} />
+                    <input type='password' name='pwcheck' placeholder='비밀번호 확인' onChange={(e)=>{setPwCheck(e.target.value)}} />
                 </form>
                 <button type='submit' className='joinBtn' style={{float:'left'}} onClick={()=>JoinAccess()}>회원가입</button>
                 <button className='joinBtn' style={{float:'right'}} onClick={()=>{close(false)}}>취소</button>
