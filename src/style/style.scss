@@ -1,0 +1,176 @@
+// #F1F3F8 #D6E0F0 #8D93AB #393B44
+
+// 전체창
+.window{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+h1{
+    font-size: 1.5rem;
+}
+p{
+    color:#393B44;
+}
+span{
+    color:#393B44;
+}
+
+// button
+button{
+    color: #F1F3F8;
+    background-color: #8D93AB;
+    border:2px solid #8D93AB;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 3px 5px;
+    &:hover{
+        color: #393B44;
+        background-color: #8D93AB;
+        border:2px solid #393B44;
+        
+    }
+}
+
+
+//로그인창
+.loginWindow{
+    position:relative;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    width:30%;
+    height:50%;
+    background-color: #D6E0F0;
+    border:2px solid #393B44;
+    border-radius: 10px;
+    padding:2%;
+}
+#LoginForm>input{
+    display: block;
+    width:97%;
+    height:25px;
+    margin-bottom: 5px;
+}
+#LoginForm>label{
+    display: block;
+    margin-bottom: 20px;
+}
+#LoginForm>button{
+    display: block;
+    width:100%;
+    margin-top:5px;
+}
+.loginBtn{
+    display: inline-block;
+    margin-top:10px;
+    width:48%;
+}
+//join
+.joinWindow{
+    position:relative;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    width:90%;
+    height:95%;
+    background-color: #D6E0F0;
+    border:2px solid #393B44;
+    border-radius: 10px;
+    padding:5%;
+}
+#LoginForm>p{
+    margin-top:0;
+    padding-left:5px;
+}
+.joinBtn{
+    display: inline-block;
+    margin-top:10px;
+    width:48%;
+}
+
+//알림창
+.alert{
+    position:relative;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    width:90%;
+    height:60%;
+    background-color: #D6E0F0;
+    border:2px solid #393B44;
+    border-radius: 10px;
+    padding:5%;
+}
+.alert>.logoImg{
+    position:relative;
+    width:15%;
+    left:50%;
+    transform: translateX(-50%);
+    margin-bottom:10px;
+}
+.alert>p{
+    position:relative;
+    left:50%;
+    transform: translateX(-30%);
+    font-size:0.8rem;
+    color:#393B44;
+    font-weight:bolder;
+}
+.alert>button{
+    position:relative;
+    left:50%;
+    transform: translateX(-50%);
+    margin-top:10px;
+}
+
+//add_Memo
+.memoFlex{
+    display:flex;
+    padding: 20px 0px;
+    height:50vh;
+    flex-direction: row;
+    flex-wrap: nowrap;  //공간부족시 줄넘김처리
+}
+.memoFlex>.memoItem{
+    flex: 1;
+    margin: -10px 5px;
+    border:1.5px solid #8D93AB;
+
+    &:hover{
+        border:2px solid #393B44;
+        font-weight:bolder;
+    }
+}
+.memoFlex>.memoItem>.memoAdd{
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -90%);
+    width:30%;
+}
+.memoFlex>.memoItem>.memoAddSpan{
+    position: relative;
+    display: block;
+    text-align: center;
+    top:35%;
+    transform: translateY(-50%);
+    font-size:15px;
+}
+
+//memo
+.memo{
+    position:relative;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    width:70%;
+    height:70%;
+    background-color: #D6E0F0;
+    border:2px solid #393B44;
+    border-radius: 10px;
+    padding:5%;
+}
