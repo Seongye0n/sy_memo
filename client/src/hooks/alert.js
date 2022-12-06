@@ -3,8 +3,8 @@ import '../style/style.scss';
 
 const Alert = (props) => {
     
-    const {close} = props.close;
-    const value = props.value;
+    const {close} = props.close; //알림창을 열림&닫기
+    const value = props.value; //알림창에 알림 내용
 
     return(
         <div className='window'>
