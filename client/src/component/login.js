@@ -6,7 +6,7 @@ import QueryString from 'querystring';
 
 //로그인창
 const Login = (props) => {
-    const {close} = props;
+    const {close} = props;  //로그인 확인 여부
 
     const [alertModal, setAlertModal] = useState(false); //로그인시 잘못된 입력 알림창.
     const [alertValue, setAlertValue] = useState(''); //로그인시 잘못된 입력 알림 내용값.
@@ -15,13 +15,14 @@ const Login = (props) => {
 
     const [email, setEmail]=useState('');
     const [pw, setPw]=useState('');
-    
 
     const emailRegEx = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/;
     const [formCheck, setFormCheck] = useState({
         email: false, 
         pw: false,
     });
+
+    let sessionStorage = window.sessionStorage; //세션으로 저장.
 
     const LoginCheck = () => {
         if(formCheck.email === false){ //이메일 형식이 아닐 때
@@ -38,13 +39,13 @@ const Login = (props) => {
             })
             .then(res => res.data)
             .then(data => {
-                //일치하는 이메일이 없습니다. / 비밀번호가 일치하지 않습니다.
-                if(data){
+                if(data.result === true){ //로그인 성공시
+                    close(true);
+                    sessionStorage.setItem("loginName", data.name); //로그인 성공 후 이름 저장
+                    //loginName(sessionStorage.getItem(data.name)); //로그인 후 이름을 들고옴.
+                }else{ //없는 아이디 또는 비밀번호 일치 확인함
                     setAlertModal(true);
-                    setAlertValue(data);
-                }
-                else{ //로그인 성공
-                    close(false);
+                    setAlertValue(data.msg);
                 }
             }) //회원가입 성공여부
         }

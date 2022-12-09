@@ -1,6 +1,11 @@
 // #F1F3F8 #D6E0F0 #8D93AB #393B44
 
 // 전체창
+.Content{
+    position:relative;
+    width: 100%;
+    height:auto;
+}
 .window{
     position:fixed;
     top:0;
@@ -8,6 +13,7 @@
     width:100%;
     height:100%;
     background-color: rgba(255, 255, 255, 0.6);
+    z-index:3;
 }
 h1{
     font-size: 1.5rem;
@@ -18,7 +24,15 @@ p{
 span{
     color:#393B44;
 }
-
+a{
+    text-decoration: none;
+    color:#393B44;
+}
+label{
+    font-size:1.2rem;
+    font-weight: bolder;
+    color:#393B44;
+}
 // button
 button{
     color: #F1F3F8;
@@ -54,6 +68,7 @@ button{
     width:97%;
     height:25px;
     margin-bottom: 5px;
+    border:1px solid #393B44;
 }
 #LoginForm>label{
     display: block;
@@ -69,6 +84,22 @@ button{
     margin-top:10px;
     width:48%;
 }
+#LoginForm>label{
+    font-size:1rem;
+}
+@media only screen and (max-width: 768px) {
+    .loginWindow{
+        width:80%;
+        height:52%;
+    }
+    .loginBtn{
+        width:100%;
+    }
+    #LoginForm>label{
+        font-size:0.75rem;
+    }
+}
+
 //join
 .joinWindow{
     position:relative;
@@ -91,10 +122,15 @@ button{
     margin-top:10px;
     width:48%;
 }
+@media only screen and (max-width: 768px) {
+    .joinBtn{
+        width:100%;
+    }
+}
 
 //알림창
 .alert{
-    position:relative;
+    position:absolute;
     left:50%;
     top:50%;
     transform: translate(-50%, -50%);
@@ -115,10 +151,11 @@ button{
 .alert>p{
     position:relative;
     left:50%;
-    transform: translateX(-30%);
+    transform: translateX(-50%);
     font-size:0.8rem;
     color:#393B44;
     font-weight:bolder;
+    text-align: center;
 }
 .alert>button{
     position:relative;
@@ -126,11 +163,46 @@ button{
     transform: translateX(-50%);
     margin-top:10px;
 }
+.alert>div{
+    position:relative;
+    width:100%;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+// 취소창
+.cancle{
+    width:35%;
+    height:30%;
+}
+.alert>div .cancleBtn{
+    position:relative;
+    margin-top:20px;
+    right:50%;
+    transform: translateX(-70%);
+    padding:2px 30px;
+}
+@media only screen and (max-width: 1024px) {
+    .alert>div .cancleBtn{
+        width:100%;
+        left:50%;
+        transform: translateX(-50%);
+        padding:2px 30px;
+        margin-top:10px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .alert{
+        width:70%;
+        height:40%;
+    }
+}
 
 //add_Memo
 .memoFlex{
     display:flex;
     padding: 20px 0px;
+    margin: 0 5%;
     height:50vh;
     flex-direction: row;
     flex-wrap: nowrap;  //공간부족시 줄넘김처리
@@ -145,32 +217,77 @@ button{
         font-weight:bolder;
     }
 }
-.memoFlex>.memoItem>.memoAdd{
-    position: relative;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -90%);
-    width:30%;
-}
-.memoFlex>.memoItem>.memoAddSpan{
+.memoFlex>.memoItem>.addLink{
     position: relative;
     display: block;
+    height:100%;
+}
+.memoFlex>.memoItem>.addLink>.addImg{
+    position:relative;
+    display:block;
+    width:25%;
+    left:50%;
+    top:25%;
+    transform: translateX(-50%);
+}
+.memoFlex>.memoItem>.addLink>span{
+    position:relative;
+    display:block;
+    top:30%;
     text-align: center;
-    top:35%;
-    transform: translateY(-50%);
-    font-size:15px;
+    font-size:1.2rem;
 }
 
-//memo
+//write
 .memo{
-    position:relative;
-    left:50%;
-    top:50%;
-    transform: translate(-50%, -50%);
-    width:70%;
-    height:70%;
-    background-color: #D6E0F0;
-    border:2px solid #393B44;
-    border-radius: 10px;
-    padding:5%;
+    padding: 40px 0px;
+    margin: 0 5%;
+    height:50vh; 
 }
+.memo label{
+    float:left;
+    width:5%;
+}
+.memo .input{
+    float:left;
+    width:94%;
+    height:3.5vh;
+    margin-bottom: 30px;
+    border:1px solid #393B44;
+}
+.memo .inputText{
+    float:top;
+    width:94%;
+    height:50vh;
+    border:1px solid #393B44;
+}
+.memo button{
+    position:relative;
+    float:left;
+    margin-top:30px;
+    margin-right:20px;
+    left:40%;
+    transform: translateX(-40%);
+    padding:5px 60px;
+}
+@media only screen and (max-width: 1024px) {
+    .memo label{
+        width: 100%;
+    }
+    .memo .input{
+        margin:10px 0;
+    }
+    .memo .inputText{
+        margin-top:10px;
+    }
+    .memo button{
+        left:30%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .memo button{
+        padding:2px 20px;
+        margin-right:5px;
+    }
+}
+

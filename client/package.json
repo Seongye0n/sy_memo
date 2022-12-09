@@ -48,6 +48,5 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0"
-  },
-  "proxy": "https://tjddus0630.cafe24.com/sy_memo"
+  }
 }
