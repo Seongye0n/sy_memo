@@ -1,13 +1,12 @@
 import React from 'react';
+import Header from '../component/header';
 
 const Write = () => {
     
     return(
-        <div className='window'>
-            <div className='memo'>
-                
-            </div>
-        </div>
+        <>
+            <Header/>
+        </>
     )
 }
 

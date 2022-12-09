@@ -8,7 +8,7 @@ const Add_memo = () => {
     return(
         <>
             <div className='memoFlex'>
-                    <div className='memoItem' onClick='window.location.href = "http://localhost:3000/sy_memo/client/src/hooks/write.js"'>
+                    <div className='memoItem' onClick='window.location.href="https://seongye0n.github.io/sy_memo/client/src/hooks/write.js"'>
                         <img src={process.env.PUBLIC_URL+`/images/add.png`} alt='memo_add' className='memoAdd'/>
                         <span className='memoAddSpan'>메모 추가</span>
                     </div>
