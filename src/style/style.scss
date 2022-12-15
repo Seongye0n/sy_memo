@@ -140,18 +140,15 @@ button{
     border:2px solid #393B44;
     border-radius: 10px;
     padding:5%;
+    text-align: center;
 }
 .alert>.logoImg{
     position:relative;
     width:15%;
-    left:50%;
-    transform: translateX(-50%);
     margin-bottom:10px;
 }
 .alert>p{
     position:relative;
-    left:50%;
-    transform: translateX(-50%);
     font-size:0.8rem;
     color:#393B44;
     font-weight:bolder;
@@ -159,8 +156,6 @@ button{
 }
 .alert>button{
     position:relative;
-    left:50%;
-    transform: translateX(-50%);
     margin-top:10px;
 }
 .alert>div{
@@ -170,17 +165,48 @@ button{
     left: 50%;
     transform: translateX(-50%);
 }
+//alert2
+.alert2{
+    width:25%;
+    height:20%;
+}
+.alert2 button{
+    margin-top:20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .alert{
+        width:70%;
+        height:40%;
+    }
+    .alert2{
+        position:absolute;
+        width:60%;
+        height:20%;
+    }
+    .alert2 button{
+        margin-top:10px;
+    }
+}
+
 // 취소창
 .cancle{
     width:35%;
     height:30%;
 }
+.alert>div{
+    position: relative;
+    width:100%;
+    text-align: center;
+}
 .alert>div .cancleBtn{
+    
     position:relative;
     margin-top:20px;
-    right:50%;
-    transform: translateX(-70%);
     padding:2px 30px;
+}
+.choiceBtn{
+    margin-left:10px;
 }
 @media only screen and (max-width: 1024px) {
     .alert>div .cancleBtn{
@@ -192,9 +218,31 @@ button{
     }
 }
 @media only screen and (max-width: 768px) {
-    .alert{
-        width:70%;
+    .cancle{
+        width:80%;
+        height:35%;
+    }
+    .alert>div .cancleBtn{
+        font-size: 0.8rem;
+    }
+}
+
+//lock
+.lock{
+    width:40%;
+    height:40%;
+}
+@media only screen and (max-width: 768px) {
+    .lock{
+        width:80%;
         height:40%;
+    }
+    .lock input{
+        width:100%;
+    }
+    .lock img{
+        position:relative;
+        width:25%;
     }
 }
 
@@ -237,6 +285,13 @@ button{
     text-align: center;
     font-size:1.2rem;
 }
+.addLink2{
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
 
 //write
 .memo{

@@ -7,8 +7,8 @@ const Alert = (props) => {
     const value = props.value; //알림창에 알림 내용
 
     return(
-        <div className='window'>
-            <div className='alert'>
+        <div className='window' style={props.styleWindow}>
+            <div className='alert' style={props.styleAlert}>
                 <img src={process.env.PUBLIC_URL+'/images/alert.png'} alt='alert_Image' className='logoImg'/>
                 <p>{value}</p>
                 <button onClick={()=>{props.close(false)}}>확인</button>

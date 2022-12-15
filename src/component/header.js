@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {MobileSize} from '../style/screen.js';
+import {Link} from 'react-router-dom';
 
 const StyleHeader = styled.header`
     position: relative;
@@ -67,6 +68,7 @@ const Header = (props) => {
 
     const Logout = () => {
         sessionStorage.removeItem("loginName");
+        sessionStorage.removeItem("loginEmail");
         loginCheck(false);
     }
 
@@ -77,9 +79,11 @@ const Header = (props) => {
                 <h1 style={logoH1}>MEMO</h1>
                 { name === 'visible'?
                     <>
+                        <Link to='/'>
                         <button type='submit' style={logout} onClick={()=>Logout()}
                             onMouseOver={(e)=>{e.target.style.color='#393B44'; e.target.style.border='2px solid #393B44';}}
                             onMouseOut={(e)=>{e.target.style.color='#F1F3F8'; e.target.style.border='2px solid #F1F3F8';}}>LogOut</button>
+                        </Link>
                         <span style={nameSpan}>{sessionStorage.getItem("loginName")}님의 메모장</span>
                     </>
                     :

@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import axios, {post} from 'axios';
+import React, {useState} from 'react';
+import axios from 'axios';
 import '../style/style.scss';
 import Alert from '../hooks/alert';
 import QueryString from 'querystring';
@@ -42,12 +42,12 @@ const Login = (props) => {
                 if(data.result === true){ //로그인 성공시
                     close(true);
                     sessionStorage.setItem("loginName", data.name); //로그인 성공 후 이름 저장
-                    //loginName(sessionStorage.getItem(data.name)); //로그인 후 이름을 들고옴.
+                    sessionStorage.setItem("loginEmail", data.email); //로그인 성공 후 이메일 저장
                 }else{ //없는 아이디 또는 비밀번호 일치 확인함
                     setAlertModal(true);
                     setAlertValue(data.msg);
                 }
-            }) //회원가입 성공여부
+            }) //로그인 성공여부
         }
     }
 
@@ -90,6 +90,7 @@ const Join = (props) => {
     const [email, setEmail] = useState('');
     const [pw, setPw] = useState(''); //비밀번호
     const [pwCheck, setPwCheck] = useState('');
+    
 
     //정규식 체크
     const nameRegEx = /^[가-힣]+$/;
@@ -103,7 +104,6 @@ const Join = (props) => {
         pwCheck: false,
     });
 
-
     const JoinAccess = () => { //회원가입 요청사항 확인 후 데이터 전달
        
         if(formCheck.name && formCheck.email && formCheck.pw && formCheck.pwCheck){
@@ -114,13 +114,12 @@ const Join = (props) => {
             })
             .then(res => res.data)
             .then(data => {
-                if(data===true){
+                if(data){
                     setAlertModal(true);
-                    setAlertValue('회원가입이 완료되었습니다.');
+                    setAlertValue(data);
                 }
                 else{
-                    setAlertModal(true);
-                    setAlertValue('회원가입을 할 수 없습니다.');
+                    close(false);
                 }
             }) //회원가입 성공여부
         }else if(!formCheck.name){
@@ -134,7 +133,7 @@ const Join = (props) => {
             setAlertValue('사용할 수 없는 패스워드입니다.');
         }else{
             setAlertModal(true);
-            setAlertValue('기존의 패스워드와 일치하지 않습니다.');
+            setAlertValue('패스워드를 동일하게 입력하세요.');
         }
         
     }
@@ -166,7 +165,7 @@ const Join = (props) => {
                             else setFormCheck({...formCheck, pwCheck:false})
                          }}/>
                 </form>
-                <button type='submit' className='joinBtn' style={{float:'left'}} onClick={() => JoinAccess() }>회원가입</button>
+                <button type='submit' className='joinBtn' style={{float:'left'}} onClick={() => JoinAccess()}>회원가입</button>
                 <button className='joinBtn' style={{float:'right'}} onClick={()=>{close(false)}}>취소</button>
                 {alertModal === true? <Alert close={setAlertModal} value={alertValue}/> : null}
             </div>
