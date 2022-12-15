@@ -5,19 +5,12 @@ body{
     padding:0;
 }
 .App{
-    position:relative;
-    width:80vw;
-    height:auto;
+    position:absolute;
+    width:80%;
+    height:100vh;
     left:50%;
     transform: translateX(-50%);
     background-color: #F1F3F8;
     color:#393B44;
     font-size: 62.5%;
-}
-.Content{
-    position:relative;
-    width: 80%;
-    height:auto;
-    left:50%;
-    transform: translateX(-50%);
 }
