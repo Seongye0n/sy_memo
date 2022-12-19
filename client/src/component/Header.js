@@ -75,8 +75,10 @@ const Header = (props) => {
     return(
         <StyleHeader style={{height: mobile? '10vh' : null }}>
             <div style={logo}>
+                <Link to={'/'} className='addLink'>
                 <img src={process.env.PUBLIC_URL+`/images/logo.png`} alt='logo' style={logoImg}/>
                 <h1 style={logoH1}>MEMO</h1>
+                </Link>
                 { name === 'visible'?
                     <>
                         <Link to='/'>

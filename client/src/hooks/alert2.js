@@ -10,7 +10,7 @@ const Alert2 = (props) => {
             <div className='alert alert2'>
                 <img src={process.env.PUBLIC_URL+props.img} alt='alert_Image' className='logoImg'/>
                 <p>{props.value}</p>
-                {props.img === '/images/confirmed.png'? 
+                {props.img === '/images/confirmed.png' || props.img === '/images/trash.png'? 
                     <Link to="/" className='addLink addLink2'> <button>확인</button> </Link>
                     :
                     <button onClick={()=> props.close(false)}>확인</button>

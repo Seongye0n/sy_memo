@@ -5,6 +5,8 @@ import Header from './component/header';
 import Login from './component/login';
 import Add_memo from './component/add_memo';
 import Write from './component/write.js';
+import Detail from './component/detail.js';
+import Update from './component/update.js';
 
 function App() {
 
@@ -19,6 +21,8 @@ function App() {
       <Routes>
           <Route path='/' element={<Add_memo/>}/>
           <Route path='/write' element={<Write/>}/>
+          <Route path='/detail' element={<Detail/>}/>
+          <Route path='/update' element={<Update/>}/>
       </Routes>
     </div>
   );

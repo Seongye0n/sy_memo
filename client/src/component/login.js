@@ -66,12 +66,9 @@ const Login = (props) => {
                             if(e.target.value !== '') setFormCheck({...formCheck, pw:true})
                             else setFormCheck({...formCheck, pw:false})
                         }}/>
-                    <label>
-                        <input type='checkbox' id='remember-id'/> 아이디 저장하기 
-                    </label>
                 </form>
-                <button className='loginBtn' type='submit' style={{float:'left'}} onClick={()=>LoginCheck()}>로그인</button>
-                <button className='loginBtn' type='button' style={{float:'right'}} onClick={()=>{setJoinModal(true)}}>회원가입</button>
+                <button className='loginBtn' type='submit' style={{float:'left', marginTop:'30px'}} onClick={()=>LoginCheck()}>로그인</button>
+                <button className='loginBtn' type='button' style={{float:'right', marginTop:'30px'}} onClick={()=>{setJoinModal(true)}}>회원가입</button>
                 {joinModal === true? <Join close={setJoinModal} /> : null}
                 {alertModal === true? <Alert close={setAlertModal} value={alertValue}/> : null}
             </div>
