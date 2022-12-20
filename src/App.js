@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {Routes, Route} from 'react-router-dom';
 import Header from './component/header';
 import Login from './component/login';
@@ -11,7 +11,6 @@ import Update from './component/update.js';
 function App() {
 
   const [loginCheck, setLoginCheck] = useState(false); //로그인 여부
-
 
   return (
     <div className='App'>

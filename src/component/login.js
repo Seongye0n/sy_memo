@@ -43,6 +43,7 @@ const Login = (props) => {
                     close(true);
                     sessionStorage.setItem("loginName", data.name); //로그인 성공 후 이름 저장
                     sessionStorage.setItem("loginEmail", data.email); //로그인 성공 후 이메일 저장
+                   
                 }else{ //없는 아이디 또는 비밀번호 일치 확인함
                     setAlertModal(true);
                     setAlertValue(data.msg);

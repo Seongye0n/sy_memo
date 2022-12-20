@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {memo, useEffect, useState} from 'react';
 import '../style/style.scss';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -20,10 +20,15 @@ const Add_memo = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [date, setDate] = useState();
-    
+
+    //세션이 변경될때마다 렌더링
     useEffect(()=>{
-        memoData();
-    },[]);
+        setUserLists([
+            {date: '', title: '', content: '', lock: ''},
+        ]);
+        memoData(); 
+     }, [sessionStorage.getItem('loginEmail')] );
+
 
     const memoData = () => {
         if(sessionStorage.getItem('loginEmail')){ //로그인 완료 상태
